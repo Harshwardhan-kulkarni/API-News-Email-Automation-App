@@ -1,9 +1,9 @@
 import requests
 from send_email import send_email
 
-
+topic = ["tesla"]
 api_key = "230f1df4eb5343d2ad359f975f583dc7"
-url = "https://newsapi.org/v2/everything?q=tesla" \
+url = f"https://newsapi.org/v2/everything?q={topic}" \
       "&from=2024-06-29&sortBy=publishedAt&" \
       "apiKey=230f1df4eb5343d2ad359f975f583dc7&language=en"
 
@@ -11,6 +11,7 @@ url = "https://newsapi.org/v2/everything?q=tesla" \
 r = requests.get(url)
 
 # get a dictionary with data
+
 content = r.json()
 
 body = " "
